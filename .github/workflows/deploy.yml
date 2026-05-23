@@ -1,0 +1,25 @@
+name: Deploy Website Files to S3
+
+on:
+  push:
+    branches:
+      - main  # جب آپ مین برانچ پر پش کریں گے
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+
+      # یہاں ہم مینوئلی بکٹ کا نام لکھیں گے کیونکہ ٹیرارفارم اب پائپ لائن میں نہیں ہے
+      - name: Sync Updated Files to S3
+        run: |
+          aws s3 sync . s3://imran-kiani-portfolio-786 --exclude ".git*" --exclude "*.tf*" --exclude ".github*" --delete
