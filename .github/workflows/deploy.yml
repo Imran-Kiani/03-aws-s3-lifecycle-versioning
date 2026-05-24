@@ -1,10 +1,4 @@
 # ==============================================================================
-# Dynamic Build and Deployment Status Badges for Muhammad Imran
-# Generated to provide real-time pipeline status direct on GitHub Repository.
-# ==============================================================================
-# --- DYNAMIC BADGES (ADD TO README.md: !\[Build Status\](https://img.shields.io/github/actions/workflow/status/Imran-Kiani/03-aws-s3-lifecycle-versioning/deploy.yml?branch=main&label=Build%20Status&style=for-the-badge&logo=github-actions&logoColor=white)) !\[Deploy Status\](https://img.shields.io/github/actions/workflow/status/Imran-Kiani/03-aws-s3-lifecycle-versioning/deploy.yml?branch=main&label=Deploy%20Status&style=for-the-badge&logo=github-actions&logoColor=white) ---
-
-# ==============================================================================
 # SECTION: 1. CI/CD AUTOMATION TRIGGER & WORKFLOW ORCHESTRATION
 # PURPOSE: Configures the pipeline execution rules, specifically mapping code
 #          delivery events on the stable production branch to initiate tasks.
