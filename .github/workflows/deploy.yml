@@ -3,12 +3,10 @@
 # PURPOSE: Configures the pipeline execution rules, specifically mapping code
 #          delivery events on the stable production branch to initiate tasks.
 # =============================================================================
-name: Deploy Website Files to S3
-
 on:
   push:
     branches:
-      - main  
+      - main
 
 # =============================================================================
 # SECTION: 2. AUTOMATION RUNTIME ENVIRONMENT (RUNNER)
@@ -18,23 +16,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-    # =============================================================================
+
+# =============================================================================
 # SECTION: 3. RUNTIME INITIALIZATION & SECURE AWS AUTHENTICATION
 # PURPOSE: Clones the codebase into the local workspace and injects encrypted
 #          GitHub Secrets into the runner environment to authenticate with AWS.
 # =============================================================================
+    steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-north-1
+          aws-region: us-east-1
 
-      # =============================================================================
+# =============================================================================
 # SECTION: 4. CODE QUALITY ASSURANCE & STATIC ANALYSIS (LINTING)
 # PURPOSE: Validates HTML structural syntax and CSS styling standards to prevent
 #          broken layouts or invalid code from being deployed to production.
@@ -50,11 +49,11 @@ jobs:
       - name: Validate CSS Syntax
         run: npx stylelint "**/*.css" --allow-empty-input --config '{"rules": {}}'
 
-# =============================================================================
-# SECTION: 5. PRODUCTION REPOSITORY SYNCHRONIZATION (DEPLOYMENT)
-# PURPOSE: Executes the AWS CLI S3 Sync operation to securely copy updated assets
-#          directly to the production bucket while filtering redundant files.
-# =============================================================================
+      # =============================================================================
+      # SECTION: 5. PRODUCTION REPOSITORY SYNCHRONIZATION (DEPLOYMENT)
+      # PURPOSE: Executes the AWS CLI S3 Sync operation to securely copy updated assets
+      #          directly to the production bucket while filtering redundant files.
+      # =============================================================================
       - name: Sync Updated Files to S3
         run: |
           aws s3 sync . s3://imran-kiani-portfolio-786 --exclude ".git*" --exclude "*.tf*"
