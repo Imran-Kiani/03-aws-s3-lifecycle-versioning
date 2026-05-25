@@ -27,12 +27,12 @@ resource "aws_s3_bucket_lifecycle_configuration" "website_lifecycle" {
     id     = "cleanup-old-website-versions"
     status = "Enabled"
 
-    # پرانے ورژنز (Noncurrent Versions) کو 30 دن بعد مستقل ڈیلیٹ کرنے کا رول
+    # 
     noncurrent_version_expiration {
       noncurrent_days = 30
     }
 
-    # اگر کوئی فائل اپلوڈ ہوتے ہوئے بیچ میں رک جائے، تو 7 دن بعد اس کا کچرا صاف کر دو
+    # 
     abort_incomplete_multipart_upload {
       days_after_initiation = 7
     }

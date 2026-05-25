@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Imran | AWS Cloud & DevOps Engineer</title>
+    <title>Imran Kiani | AWS Cloud & DevOps Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="profile.png" alt="Muhammad Imran" style="width:150px; border-radius:50%; border: 5px solid #fff; margin-bottom: 15px;">
-        <h1>Muhammad Imran</h1>
+        <img src="profile.png" alt="Imran Kiani" style="width:150px; border-radius:50%; border: 5px solid #fff; margin-bottom: 15px;">
+        <h1>Imran Kiani</h1>
         <p>AWS Cloud & DevOps Engineer</p>
     </header>
 
@@ -31,6 +31,7 @@
                 <span class="badge">Terraform (IaC)</span>
                 <span class="badge">GitHub Actions (CI/CD)</span>
                 <span class="badge">IAM & OAC Security</span>
+                <span class="badge">CloudFront Cache Invalidation</span>
                 <span class="badge">Route 53 & SSL</span>
             </div>
         </section>
@@ -52,15 +53,15 @@
         </section>
 
         <section>
-            <h2>Automated CI/CD Pipeline (The Power of DevOps)</h2>
+            <h2>Automated CI/CD Pipeline & Real-Time Cache Management</h2>
             <p>This website is integrated with a sophisticated <strong>Continuous Integration and Continuous Deployment (CI/CD)</strong> pipeline. The main advantage of this setup is the elimination of manual uploads and human error.</p>
-            <p>With <strong>GitHub Actions</strong>, any change I make to the code is automatically tested and synced to the AWS Cloud. I can update my entire global web presence with just <strong>three simple commands</strong>:</p>
-            <ul style="background: #f0f0f0; padding: 15px; border-radius: 8px; font-family: monospace; color: #333;">
+            <p>With <strong>GitHub Actions</strong>, any change made to the code is automatically tested and synced to the AWS Cloud. I can update my entire global web presence with just <strong>three simple commands</strong>:</p>
+            <ul style="background: #f0f0f0; padding: 15px; border-radius: 8px; font-family: monospace; color: #333; list-style-type: none;">
                 <li>1. git add .</li>
                 <li>2. git commit -m "Update website"</li>
                 <li>3. git push origin main</li>
             </ul>
-            <p>Once pushed, the pipeline handles the rest—invalidating the CloudFront cache and serving the fresh content to users globally within seconds.</p>
+            <p><strong>Edge Cache Automation:</strong> To solve the common issue of stale content, the pipeline includes an automated <strong>CloudFront Cache Invalidation</strong> step. As soon as the static files are synced to S3, the workflow triggers a global purge (`/*`), ensuring that users instantly receive the latest updates without waiting for Edge locations to expire naturally.</p>
         </section>
 
         <section>
@@ -74,9 +75,8 @@
     </div>
 
     <footer>
-        <p>© 2026 Designed & Deployed by Muhammad Imran using Terraform</p>
+        <p>© 2026 Designed & Deployed by Imran Kiani using Terraform</p>
     </footer>
 
-
 </body>
-</html>        
+</html>
