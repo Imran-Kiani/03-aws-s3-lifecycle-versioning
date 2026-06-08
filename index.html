@@ -5,13 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imran Kiani | AWS Cloud & DevOps Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ہیڈر کے لے آؤٹ کے لیے فلیکس باکس کنفیگریشن */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            flex-wrap: wrap;
+        }
+        .header-left {
+            text-align: center;
+            flex: 1;
+            min-width: 250px;
+        }
+        .header-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 250px;
+            padding: 10px;
+        }
+        .header-right img {
+            width: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .header-right-text {
+            color: #ff0000; /* سرخ رنگ */
+            font-size: 24px;
+            font-weight: bold;
+            direction: rtl; /* اردو فارمیٹنگ (دائیں سے بائیں) */
+            font-family: 'Noori Nastaliq', 'Urdu Typesetting', Tahoma, sans-serif;
+            text-align: center;
+            margin-top: 5px;
+        }
+        /* موبائل آلات کے لیے ریسپونسیو لے آؤٹ */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-right {
+                margin-top: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <img src="profile.png" alt="Imran Kiani" style="width:150px; border-radius:50%; border: 5px solid #fff; margin-bottom: 15px;">
-        <h1>Imran Kiani</h1>
-        <p>AWS Cloud & DevOps Engineer</p>
+        <div class="header-left">
+            <img src="profile.png" alt="Imran Kiani" style="width:150px; border-radius:50%; border: 5px solid #fff; margin-bottom: 15px;">
+            <h1>Imran Kiani</h1>
+            <p>AWS Cloud & DevOps Engineer</p>
+        </div>
+
+        <div class="header-right">
+            <img src="first.png" alt="Response Image">
+            <div class="header-right-text">
+                طارق لن پہ چڑھ
+            </div>
+        </div>
     </header>
 
     <div class="container">
@@ -58,7 +117,7 @@
             <p>With <strong>GitHub Actions</strong>, any change made to the code is automatically tested and synced to the AWS Cloud. I can update my entire global web presence with just <strong>three simple commands</strong>:</p>
             <ul style="background: #f0f0f0; padding: 15px; border-radius: 8px; font-family: monospace; color: #333; list-style-type: none;">
                 <li>1. git add .</li>
-                <li>2. git commit -m "Update website"</li>
+                <li>2. git commit -m "Update website architecture"</li>
                 <li>3. git push origin main</li>
             </ul>
             <p><strong>Edge Cache Automation:</strong> To solve the common issue of stale content, the pipeline includes an automated <strong>CloudFront Cache Invalidation</strong> step. As soon as the static files are synced to S3, the workflow triggers a global purge (`/*`), ensuring that users instantly receive the latest updates without waiting for Edge locations to expire naturally.</p>
@@ -79,4 +138,4 @@
     </footer>
 
 </body>
-</html>            
+</html>
