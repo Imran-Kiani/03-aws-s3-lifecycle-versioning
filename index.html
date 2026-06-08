@@ -27,24 +27,63 @@
             justify-content: center;
             min-width: 250px;
             padding: 10px;
-            margin-bottom: 25px; /* تصویر اور ٹیکسٹ کو سفید کارڈ سے اوپر رکھنے کے لیے */
+            margin-bottom: 25px;
         }
         .header-right img {
             width: 150px;
             border-radius: 50%;
             border: 5px solid #fff;
-            margin-bottom: 15px; /* تصویر کو ٹیکسٹ سے تھوڑا اور اوپر کرنے کے لیے */
+            margin-bottom: 15px;
             object-fit: cover;
         }
         .header-right-text {
             color: #ff0000; /* سرخ رنگ */
             font-size: 24px;
             font-weight: bold;
-            direction: rtl; /* اردو فارمیٹنگ (دائیں سے بائیں) */
+            direction: rtl;
             font-family: 'Noori Nastaliq', 'Urdu Typesetting', Tahoma, sans-serif;
             text-align: center;
-            line-height: 1.5; /* دونوں لائنوں کے درمیان مناسب فاصلہ */
+            line-height: 1.5;
         }
+
+        /* نیچے نیا سفید کلر کا پیچ/سیکشن */
+        .custom-white-patch {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .patch-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+        }
+        .patch-column img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid #f0f0f0;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+        .patch-text {
+            color: #ff0000; /* سرخ رنگ */
+            font-size: 20px;
+            font-weight: bold;
+            direction: rtl;
+            font-family: 'Noori Nastaliq', 'Urdu Typesetting', Tahoma, sans-serif;
+        }
+
         /* موبائل آلات کے لیے ریسپونسیو لے آؤٹ */
         @media (max-width: 768px) {
             header {
@@ -53,7 +92,11 @@
             }
             .header-right {
                 margin-top: 25px;
-                margin-bottom: 35px; /* موبائل پر سفید کارڈ سے فاصلہ برقرار رکھنے کے لیے */
+                margin-bottom: 35px;
+            }
+            .custom-white-patch {
+                flex-direction: column;
+                gap: 40px;
             }
         }
     </style>
@@ -136,6 +179,21 @@
                 <li><strong>Cost-Efficiency & Sustainability:</strong> Serverless architecture combined with strict lifecycle governance ensures zero waste and optimal pricing.</li>
             </ul>
         </section>
+
+        <!-- نیا سفید کلر کا پیچ (سیکشن) -->
+        <div class="custom-white-patch">
+            <!-- ایک سائیڈ: second.png -->
+            <div class="patch-column">
+                <img src="second.png" alt="Second Image">
+                <div class="patch-text">یہ طارق گانڈو ہے</div>
+            </div>
+            
+            <!-- دوسری سائیڈ: third.png -->
+            <div class="patch-column">
+                <img src="third.png" alt="Third Image">
+                <div class="patch-text">یہ عامر گانڈو ہے</div>
+            </div>
+        </div>
     </div>
 
     <footer>
