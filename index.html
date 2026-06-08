@@ -27,12 +27,13 @@
             justify-content: center;
             min-width: 250px;
             padding: 10px;
+            margin-bottom: 25px; /* تصویر اور ٹیکسٹ کو سفید کارڈ سے اوپر رکھنے کے لیے */
         }
         .header-right img {
             width: 150px;
             border-radius: 50%;
             border: 5px solid #fff;
-            margin-bottom: 10px;
+            margin-bottom: 15px; /* تصویر کو ٹیکسٹ سے تھوڑا اور اوپر کرنے کے لیے */
             object-fit: cover;
         }
         .header-right-text {
@@ -42,7 +43,7 @@
             direction: rtl; /* اردو فارمیٹنگ (دائیں سے بائیں) */
             font-family: 'Noori Nastaliq', 'Urdu Typesetting', Tahoma, sans-serif;
             text-align: center;
-            margin-top: 5px;
+            line-height: 1.5; /* دونوں لائنوں کے درمیان مناسب فاصلہ */
         }
         /* موبائل آلات کے لیے ریسپونسیو لے آؤٹ */
         @media (max-width: 768px) {
@@ -52,6 +53,7 @@
             }
             .header-right {
                 margin-top: 25px;
+                margin-bottom: 35px; /* موبائل پر سفید کارڈ سے فاصلہ برقرار رکھنے کے لیے */
             }
         }
     </style>
@@ -59,16 +61,19 @@
 <body>
 
     <header>
+        <!-- بائیں حصہ: عمران کیانی کی پروفائل تصویر اور نام -->
         <div class="header-left">
             <img src="profile.png" alt="Imran Kiani" style="width:150px; border-radius:50%; border: 5px solid #fff; margin-bottom: 15px;">
             <h1>Imran Kiani</h1>
             <p>AWS Cloud & DevOps Engineer</p>
         </div>
 
+        <!-- دائیں حصہ: تصویر (first.png) اور سرخ رنگ میں دونوں لائنیں -->
         <div class="header-right">
             <img src="first.png" alt="Response Image">
             <div class="header-right-text">
-                طارق لن پہ چڑھ
+                <div>طارق لن پہ چڑھ</div>
+                <div>طارق گانڈو تیرے لیے بناٸ ہے</div>
             </div>
         </div>
     </header>
@@ -117,7 +122,7 @@
             <p>With <strong>GitHub Actions</strong>, any change made to the code is automatically tested and synced to the AWS Cloud. I can update my entire global web presence with just <strong>three simple commands</strong>:</p>
             <ul style="background: #f0f0f0; padding: 15px; border-radius: 8px; font-family: monospace; color: #333; list-style-type: none;">
                 <li>1. git add .</li>
-                <li>2. git commit -m "Update website architecture"</li>
+                <li>2. git commit -m "Update website architecture and layout"</li>
                 <li>3. git push origin main</li>
             </ul>
             <p><strong>Edge Cache Automation:</strong> To solve the common issue of stale content, the pipeline includes an automated <strong>CloudFront Cache Invalidation</strong> step. As soon as the static files are synced to S3, the workflow triggers a global purge (`/*`), ensuring that users instantly receive the latest updates without waiting for Edge locations to expire naturally.</p>
